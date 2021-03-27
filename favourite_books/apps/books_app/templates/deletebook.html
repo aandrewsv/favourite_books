@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>¿Are you sure?</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/css/bootstrap.min.css" integrity="sha384-B0vP5xmATw1+K9KRQjQERJvTumQW0nPEzvF6L/Z6nronJ3oUOFUFpCjEUQouq2+l" crossorigin="anonymous">
+    {% load static %}
+    <style>
+        #bg{
+            background-image: url( "{% static 'img/showbook-bg.jpg' %}");
+            background-size: 1800px 900px;
+            background-repeat: no-repeat;
+            background-position: top;
+            background-attachment: fixed;
+        }
+    </style>
+</head>
+<body id="bg">
+    <div class="container">
+        <div class="jumbotron">
+            <h1 class="display-4">Hello! {{user.fname}}, are you sure?</h1>
+            <p class="lead">¿Are you really sure you want to delete {{book.title}}?</p>
+            <hr class="my-4">
+            <a class="btn btn-primary btn-lg" href="/books/{{book.id}}" role="button">No, Go back</a>
+            <a class="btn btn-danger btn-lg" href="/deletebook/{{book.id}}" role="button">Yes</a>
+          </div>
+    </div>
+</body>
+</html>

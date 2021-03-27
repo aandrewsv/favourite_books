@@ -1,0 +1,15 @@
+Mejorar las validaciones de registro: 
+    Que menores a 13 años no puedan registrarse
+    Incorporar la validación de email ya existente a las otras.
+
+Mejorar los messages:
+    Ubicación principalmente, cómo poder decidir la ubicación
+    dependiendo de la validación
+    Diseño de los mensajes
+    
+Mejorar front:
+    Incorporar breakpoints con Bootstrap
+    Alinear Navbar
+
+Sobre el examen:
+    En implementación del examen esta considerado subirlo a una instancia de AWS 
