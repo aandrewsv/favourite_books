@@ -76,12 +76,12 @@ def updatebook(request, idn):
         except:
             return redirect('/books')
 
-def deletebook(request, idn):
-    if 'userid' not in request.session:
+def deletebook(request):
+    if request.method == 'GET' or 'userid' not in request.session:
         return redirect('/')
     else:
         this_user = User.objects.get(id=request.session['userid'])
-        this_book = Book.objects.get(id=idn)
+        this_book = Book.objects.get(id=request.POST['book'])
         if  this_user == this_book.uploaded_by:
             this_book.delete()
             messages.success(request, f'Succesfully deleted the book!!')

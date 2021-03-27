@@ -23,8 +23,14 @@
             <h1 class="display-4">Hello! {{user.fname}}, are you sure?</h1>
             <p class="lead">¿Are you really sure you want to delete {{book.title}}?</p>
             <hr class="my-4">
-            <a class="btn btn-primary btn-lg" href="/books/{{book.id}}" role="button">No, Go back</a>
-            <a class="btn btn-danger btn-lg" href="/deletebook/{{book.id}}" role="button">Yes</a>
+            <div class="d-flex">
+                <a class="btn btn-primary" href="/books/{{book.id}}" role="button">No, Go back</a>
+                <form action="/deletebook" method="POST">
+                    {% csrf_token %}
+                    <input type="hidden" value="{{book.id}}" name="book">
+                    <button type="submit" class="btn btn-danger">Yes</button>
+                </form>
+            </div>
           </div>
     </div>
 </body>
