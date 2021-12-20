@@ -78,15 +78,16 @@ WSGI_APPLICATION = 'favourite_books.wsgi.application'
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.postgresql', # cambiar la base de datos a postgres
-        'NAME': 'favourite_books_db', # nombre de la base de datos, se creará en el servidor de Postgres a continuación
-        'USER': 'postgres', # postgres para macOS o 'USER': 'postgres', para Windows
-        'PASSWORD': 'root', # contraseña a la que la cambió al instalar Postgres
-        'HOST': '127.0.0.1', # dirección IP localhost
-        'PORT': '5432', # puerto del servidor postgres predeterminado
+        # cambiar la base de datos a postgres
+        'ENGINE': 'django.db.backends.postgresql',
+        # nombre de la base de datos, se creará en el servidor de Postgres a continuación
+        'NAME': 'fav_books',
+        'USER': 'postgres',  # postgres para macOS o 'USER': 'postgres', para Windows
+        'PASSWORD': 'root',  # contraseña a la que la cambió al instalar Postgres
+        'HOST': '127.0.0.1',  # dirección IP localhost
+        'PORT': '5432',  # puerto del servidor postgres predeterminado
     }
 }
-
 
 
 # Password validation
